@@ -1,0 +1,6 @@
+{
+  "name": "SIM Klinik",
+  "description": "Sistem Informasi Manajemen Klinik Umum Modern & Terintegrasi untuk Web dan Android Native.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIM Klinik - Sistem Informasi Manajemen Klinik</title>
+    <meta name="description" content="Sistem Informasi Manajemen Klinik Umum Modern & Terintegrasi untuk Web dan Android Native." />
+    <meta property="og:title" content="SIM Klinik - Sistem Informasi Manajemen Klinik" />
+    <meta property="og:description" content="Sistem Informasi Manajemen Klinik Umum Modern & Terintegrasi untuk Web dan Android Native." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      (function() {
+        // HMR is disabled in AI Studio container. Stub WebSocket to prevent unhandled reconnection errors.
+        try {
+          var RealWebSocket = window.WebSocket;
+          if (RealWebSocket) {
+            window.WebSocket = function(url, protocols) {
+              if (typeof url === 'string' && (url.indexOf('vite') !== -1 || url.indexOf('ais-') !== -1 || url.indexOf('run.app') !== -1 || url.indexOf(':3000') !== -1 || protocols === 'vite-hmr')) {
+                var fake = {
+                  url: url,
+                  readyState: 1,
+                  bufferedAmount: 0,
+                  extensions: '',
+                  protocol: 'vite-hmr',
+                  binaryType: 'blob',
+                  send: function() {},
+                  close: function() { this.readyState = 3; },
+                  addEventListener: function() {},
+                  removeEventListener: function() {},
+                  dispatchEvent: function() { return false; },
+                  onopen: null,
+                  onmessage: null,
+                  onerror: null,
+                  onclose: null
+                };
+                return fake;
+              }
+              return new RealWebSocket(url, protocols);
+            };
+            window.WebSocket.prototype = RealWebSocket.prototype;
+            window.WebSocket.CONNECTING = 0;
+            window.WebSocket.OPEN = 1;
+            window.WebSocket.CLOSING = 2;
+            window.WebSocket.CLOSED = 3;
+          }
+        } catch (e) {}
+
+        window.addEventListener('error', function(event) {
+          var str = (event.message || '') + ' ' + (event.filename || '') + ' ' + (event.error ? event.error.stack : '');
+          if (str.indexOf('WebSocket') !== -1 || str.indexOf('vite') !== -1 || str.indexOf('createWebSocketModuleRunnerTransport') !== -1) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            return true;
+          }
+        }, true);
+
+        window.addEventListener('unhandledrejection', function(event) {
+          var str = String(event.reason || '');
+          if (str.indexOf('WebSocket') !== -1 || str.indexOf('vite') !== -1) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            return true;
+          }
+        }, true);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
